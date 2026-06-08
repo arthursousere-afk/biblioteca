@@ -1,0 +1,65 @@
+public class livro {
+
+
+        private String nome;
+        private String autor;
+        private boolean disponivel;
+
+        // Construtor
+        public livro(String nome, String autor) {
+            this.nome = nome;
+            this.autor = autor;
+            this.disponivel = true; // começa disponível por padrão
+        }
+
+        // Gets e Sets
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public String getAutor() {
+            return autor;
+        }
+
+        public void setAutor(String autor) {
+            this.autor = autor;
+        }
+
+        public boolean isDisponivel() {
+            return disponivel;
+        }
+
+        // Métodos
+        public void emprestarLivro() {
+            if (disponivel) {
+                disponivel = false;
+                System.out.println("Livro \"" + nome + "\" livro emprestado");
+            } else {
+                System.out.println("Livro \"" + nome + "\" não está disponível no momento.");
+            }
+        }
+
+        public void devolverLivro() {
+            if (!disponivel) {
+                disponivel = true;
+                System.out.println("Livro \"" + nome + "\" devolvido com sucesso!");
+            } else {
+                System.out.println("Livro \"" + nome + "\" já estava disponível.");
+            }
+        }
+
+        public void mostrarInfo() {
+            System.out.println("---------------------------");
+            System.out.println("Título  : " + nome);
+            System.out.println("Autor   : " + autor);
+            System.out.println("Status  : " + (disponivel ? "Disponível" : "Emprestado"));
+        }
+    }
+
+
+
+
